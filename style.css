@@ -1,0 +1,376 @@
+:root {
+    --primary-color: #3498db;
+    --success-color: #27ae60;
+    --error-color: #e74c3c;
+    --warning-color: #f1c40f;
+    --background-color: #f0f2f5;
+    --btnDificultad-color:#ac0ac5  ;
+}
+
+ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    background: -webkit-linear-gradient(90deg,#d4179f,#5b49c9); /* Chrome 10-25, Safari 5.1-6 */ 
+    background: linear-gradient(90deg,#d4179f,#5b49c9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game-container {
+    margin-bottom: 2rem;
+    background: -webkit-linear-gradient(90deg,#f5faf9,#c7d0f0); /* Chrome 10-25, Safari 5.1-6 */ 
+    background: linear-gradient(90deg,#f5faf9,#c7d0f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    margin: 80px auto 80px auto;
+}
+h2 {
+    font-family: 'Arial', sans-serif; 
+    font-size: 2rem; 
+    color: #333; 
+    text-align: center; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    letter-spacing: 2px; 
+    font-weight: bold; 
+  }
+
+.difficulty-selector {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.difficulty-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: var(--btnDificultad-color);
+    color: #f0f2f5;
+}
+.difficulty-btn:hover{
+    background-color: #5b49c9;
+}
+
+.difficulty-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.lives {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.heart {
+    color: var(--error-color);
+    font-size: 1.5rem;
+}
+
+/* Estilos para el contenedor del temporizador */
+.timer {
+    background: var(--primary-color);
+    /* Fondo claro para el contenedor */
+    height: 6px;
+    /* Aumento de la altura para mayor visibilidad */
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 10px;
+    /* Bordes redondeados más grandes para un estilo más suave */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para darle profundidad */
+}
+
+/* Estilo para la barra de progreso del temporizador */
+.timer-bar {
+    background: var(--warning-color);
+    /* Color para la barra de progreso (puedes ajustar el color de advertencia) */
+    height: 100%;
+    width: 0%;
+    /* El ancho inicial es 0% */
+    transition: width 1s linear;
+    /* Transición suave con un efecto lineal */
+    border-radius: 10px;
+    /* Bordes redondeados iguales a la barra contenedora */
+    box-shadow: 0 0 8px rgba(255, 99, 71, 0.4);
+    /* Sombra ligera alrededor de la barra para dar énfasis */
+}
+
+/* Ejemplo de color de advertencia */
+:root {
+    --warning-color: #f39c12;
+    /* Color de advertencia (naranja) */
+}
+
+
+/* Estilos para el contenedor de la barra de progreso */
+.progress-bar {
+    background: #eee;
+    /* Color de fondo suave */
+    height: 15px;
+    /* Altura de la barra de progreso */
+    border-radius: 10px;
+    /* Bordes redondeados para un look más moderno */
+    margin: 1rem 0;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para darle profundidad */
+    position: relative;
+}
+
+/* Estilo para la parte de progreso */
+.progress {
+    background: var(--primary-color);
+    /* Color del progreso */
+    height: 100%;
+    width: 0%;
+    /* El ancho inicial es 0% */
+    border-radius: 5px;
+    /* Bordes redondeados para el progreso */
+    transition: width 0.5s ease-in-out;
+    /* Animación más suave con 'ease-in-out' */
+    box-shadow: 0 0 10px var(--primary-color);
+    /* Sombra alrededor del progreso */
+}
+
+.riddle {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.options {
+    display: grid;
+    gap: 1rem;
+}
+
+.option-btn {
+    padding: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    background: white;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+}
+
+.option-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.option-btn.correct {
+    background: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+}
+
+.option-btn.incorrect {
+    background: var(--error-color);
+    border-color: var(--error-color);
+    color: white;
+}
+
+.powerups {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.powerup-btn {
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.powerup-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.streak {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--warning-color);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    animation: modalShow 0.3s ease-out;
+}
+
+@keyframes modalShow {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.feedback {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    min-height: 1.5rem;
+}
+
+.bonus-points {
+    position: absolute;
+    font-weight: bold;
+    color: var(--success-color);
+    animation: bonusPoints 1s ease-out forwards;
+}
+
+@keyframes bonusPoints {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+.start-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: var(--success-color);
+    color: var(--background-color);
+}
+
+.stop-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: var(--error-color);
+    color: var(--background-color);
+}
+
+.start-btn:hover {
+    background-color: var(--primary-color);
+}
+
+.stop-btn:hover {
+    background-color: #900C3F;
+}
+
+
+
+
+/* Header */
+.site-header {
+    background: -webkit-linear-gradient(90deg,#00688b,#581074); /* Chrome 10-25, Safari 5.1-6 */ 
+    background: linear-gradient(90deg,#00688b,#581074); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    text-align: center;
+    padding: 1rem 0;
+    color: white;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1; 
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+
+/* Footer */
+.site-footer {
+    background: -webkit-linear-gradient(90deg,#9b0303,#000000); /* Chrome 10-25, Safari 5.1-6 */ 
+    background: linear-gradient(90deg,#9b0303,#000000);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%; /* Ocupa todo el ancho */
+    position: absolute; /* Posiciona el footer de forma absoluta */
+    bottom: 0; /* Alinea la parte inferior del footer con la parte inferior de la ventana */
+    left: 0;
+}
+
+.social-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 2.5rem;
+    }
+
+    .social-links a {
+        margin: 0 0.3rem;
+    }
+}

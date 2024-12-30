@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Adivinanzas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <h1 class="title">Adivinanzas</h1>
+    </header>
+    
+        <div class="game-container">
+            <div class="control-buttons">
+                <button class="start-btn" id="start-btn" onclick="startGame()">Start</button>
+                <button class="stop-btn" id="stop-btn" onclick="stopGame()" disabled>Stop</button>
+            </div>
+            <div>
+                <h2>Adivina Adivinador</h2>
+            </div>
+            <div class="difficulty-selector">
+                <button class="difficulty-btn active" onclick="setDifficulty('easy')" disabled>Fácil</button>
+                <button class="difficulty-btn" onclick="setDifficulty('medium')" disabled>Medio</button>
+                <button class="difficulty-btn" onclick="setDifficulty('hard')" disabled>Difícil</button>
+            </div>
+
+            <div class="stats-container">
+                <div class="score">Puntos: <span id="score">0</span></div>
+                <div class="lives" id="lives"></div>
+            </div>
+
+            <div class="timer">
+                <div class="timer-bar" id="timer-bar"></div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+
+
+            <div class="streak" id="streak" style="display: none">
+                Racha: <span id="streak-count">0</span>
+            </div>
+
+            <div class="riddle" id="riddle"></div>
+            <div class="options" id="options"></div>
+
+            <div class="powerups">
+                <button class="powerup-btn" id="skip-btn" onclick="usePowerup('skip')" title="Saltar pregunta"
+                    disabled>➡️</button>
+                <button class="powerup-btn" id="fifty-btn" onclick="usePowerup('fifty')" title="50/50"
+                    disabled>½</button>
+                <button class="powerup-btn" id="hint-btn" onclick="usePowerup('hint')" title="Pista"
+                    disabled>💡</button>
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+        </div>
+
+        <div class="modal" id="win-modal">
+            <div class="modal-content">
+                <h2>¡Felicidades! ¡Has ganado!</h2>
+                <p>Puntuación final: <span id="final-score">0</span></p>
+                <p>Racha más larga: <span id="max-streak">0</span></p>
+                <button onclick="restartGame()" class="option-btn">Jugar de nuevo</button>
+            </div>
+        </div>
+
+        <div class="modal" id="lose-modal">
+            <div class="modal-content">
+                <h2>¡Game Over!</h2>
+                <p>Puntuación final: <span id="final-score-lose">0</span></p>
+                <button onclick="restartGame()" class="option-btn">Intentar de nuevo</button>
+            </div>
+        </div>
+    
+    <footer class="site-footer">
+        <p>Derechos reservados &copy; 2024 Kuki System</p>
+        <div class="social-links">
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
